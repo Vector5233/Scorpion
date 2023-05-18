@@ -9,26 +9,14 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 @TeleOp(name = "ScorpionTeleOp" , group = "robot")
 public class ScorpionTeleOp extends OpMode {
     DcMotor shoulderLeft, shoulderRight, elbowOne, elbowTwo;
-
+    Stinger stinger;
 
     public void init() {
-        shoulderLeft = hardwareMap.dcMotor.get("shoulderLeft");
-        shoulderRight = hardwareMap.dcMotor.get("shoulderRight");
-        elbowOne = hardwareMap.dcMotor.get("elbowOne");
-        elbowTwo = hardwareMap.dcMotor.get("elbowTwo");
+        stinger = new Stinger(this);
+        stinger.init();
 
-        shoulderLeft.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        shoulderLeft.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
-
-        shoulderRight.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        shoulderRight.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
-
-        elbowOne.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        elbowOne.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
-
-        elbowTwo.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        elbowTwo.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
     }
+
     public void loop(){
 
     }

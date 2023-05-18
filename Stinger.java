@@ -7,15 +7,18 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
-@TeleOp(name = "Stinger" , group = "robot")
-public class Stinger extends OpMode {
+public class Stinger {
     DcMotor shoulderLeft, shoulderRight, elbowOne, elbowTwo;
+    OpMode parent;
+    public Stinger(OpMode p) {
+        parent = p;
+    }
 
     public void init() {
-        shoulderLeft = hardwareMap.dcMotor.get("shoulderLeft");
-        shoulderRight = hardwareMap.dcMotor.get("shoulderRight");
-        elbowOne = hardwareMap.dcMotor.get("elbowOne");
-        elbowTwo = hardwareMap.dcMotor.get("elbowTwo");
+        shoulderLeft = parent.hardwareMap.dcMotor.get("shoulderLeft");
+        shoulderRight = parent.hardwareMap.dcMotor.get("shoulderRight");
+        elbowOne = parent.hardwareMap.dcMotor.get("elbowOne");
+        elbowTwo = parent.hardwareMap.dcMotor.get("elbowTwo");
 
         shoulderLeft.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
         shoulderLeft.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
@@ -29,7 +32,5 @@ public class Stinger extends OpMode {
         elbowTwo.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
         elbowTwo.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
     }
-    public void loop(){
 
-    }
 }
