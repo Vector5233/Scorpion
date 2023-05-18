@@ -3,11 +3,14 @@ package org.firstinspires.ftc.teamcode;
 import static org.firstinspires.ftc.robotcore.external.BlocksOpModeCompanion.hardwareMap;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
+@TeleOp(name = "Stinger" , group = "robot")
 public class Stinger extends OpMode {
     DcMotor shoulderLeft, shoulderRight, elbowOne, elbowTwo;
+
     public void init() {
         shoulderLeft = hardwareMap.dcMotor.get("shoulderLeft");
         shoulderRight = hardwareMap.dcMotor.get("shoulderRight");
