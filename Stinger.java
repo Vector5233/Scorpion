@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 
 public class Stinger {
-    DcMotor shoulderLeft, shoulderRight, elbowOne, elbowTwo;
+    DcMotor shoulderLeft, shoulderRight, bottomElbow, topElbow;
     OpMode parent;
     public Stinger(OpMode p) {
         parent = p;
@@ -17,8 +17,8 @@ public class Stinger {
     public void init() {
         shoulderLeft = parent.hardwareMap.dcMotor.get("shoulderLeft");
         shoulderRight = parent.hardwareMap.dcMotor.get("shoulderRight");
-        elbowOne = parent.hardwareMap.dcMotor.get("elbowOne");
-        elbowTwo = parent.hardwareMap.dcMotor.get("elbowTwo");
+        bottomElbow = parent.hardwareMap.dcMotor.get("bottomElbow");
+        topElbow = parent.hardwareMap.dcMotor.get("topElbow");
 
         shoulderLeft.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
         shoulderLeft.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
@@ -26,11 +26,11 @@ public class Stinger {
         shoulderRight.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
         shoulderRight.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
-        elbowOne.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        elbowOne.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        bottomElbow.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        bottomElbow.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
 
-        elbowTwo.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
-        elbowTwo.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
+        topElbow.setMode(DcMotorEx.RunMode.STOP_AND_RESET_ENCODER);
+        topElbow.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
     }
 
 }
