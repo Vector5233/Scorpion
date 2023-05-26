@@ -16,9 +16,6 @@ import java.util.Vector;
 public class Stinger {
     DcMotor shoulderLeft, shoulderRight, bottomElbow, topElbow;
     double bottom, middle, top;
-    bottom =
-    middle =
-    top =
     OpMode parent;
     public Stinger(OpMode p) {
         parent = p;
@@ -49,7 +46,7 @@ public class Stinger {
 
     public double convertTicksToDegrees (DcMotor whichMotor) {
         double motorTicks;
-        double startAngle:
+        double startAngle;
 
         if (whichMotor == bottomElbow) {
             motorTicks = 1425.1;
@@ -97,8 +94,8 @@ public class Stinger {
         return;
     }
 
-    public double convertPolarToRectangular(double angle){
+    /*public double convertPolarToRectangular(double angle){
 
-    }
+    }*/
 
 }
