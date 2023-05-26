@@ -50,11 +50,11 @@ public class Stinger {
 
         if (whichMotor == bottomElbow) {
             motorTicks = 1425.1;
-            startAngle = 140;
+            startAngle = 60;
 
         } else if (whichMotor == topElbow){
             motorTicks = 751.8;
-            startAngle = -140;
+            startAngle = 60;
         } else {
             motorTicks = 751.8;
             startAngle = 0;
