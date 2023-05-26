@@ -18,6 +18,6 @@ public class ScorpionTeleOp extends OpMode {
     }
 
     public void loop(){
-
+        stinger.ticksToDegreesTest();
     }
 }
